@@ -40,3 +40,5 @@ The upper limit of the tests will not exceed 1,500,000.
 function solve(x,y) {
   return global.array.filter(a => a >= x && a < y).length
 }
+
+// or
