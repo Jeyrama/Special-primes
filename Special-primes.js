@@ -42,3 +42,21 @@ function solve(x,y) {
 }
 
 // or
+
+function solve(x, y) {
+  function isPrime(num) {
+    for (let i = 2; i <= Math.sqrt(num); i++) {
+      if (num % i === 0) return false;
+    }
+    return true;
+  }
+  const list = [];
+
+  for (let m = 0; m <= 18; m+= 1) {
+    for (let n = 0; n <= 10; n += 1) {
+      let number = 2 ** m * 3 ** n + 1;
+      if (isPrime(number)) list.push(number);
+    }
+  }
+  return list.filter(num => num >= x && num < y).length;
+}
