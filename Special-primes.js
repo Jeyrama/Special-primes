@@ -12,3 +12,6 @@ You will be given a range and your task is to return the number of primes that h
 For example, solve(0,15) = 5, because there are only 5 such primes >= 0 and < 15; they are 2,3,5,7,13. 
 The upper limit of the tests will not exceed 1,500,000.
 */
+
+
+// Solution
