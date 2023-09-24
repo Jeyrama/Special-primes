@@ -15,3 +15,28 @@ The upper limit of the tests will not exceed 1,500,000.
 
 
 // Solution
+
+(_=>{
+  let set = new Set()
+  function isPrime(n) {
+    if (n <= 3) return n >= 2
+    if (n % 2 == 0) return false
+    let p = 3
+    while (p * p <= n) {
+      if (n % p == 0) return false
+      p += 2
+    }
+    return true
+  }
+  for (let m = 0; m <= 21; ++m) {
+    for (let n = 0; n <= 16; ++n) {
+      let p = 2 ** m * 3 ** n + 1
+      if (isPrime(p)) set.add(p)
+    }
+  }
+  global.array = [...set].sort((a,b) => a-b)
+})()
+
+function solve(x,y) {
+  return global.array.filter(a => a >= x && a < y).length
+}
